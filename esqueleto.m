@@ -42,15 +42,8 @@ validate_identifications(data_test, Gzi, Gzi_mc)
 
 
 function noisy = add_white_noise_to_func(clean_signal, noise_amplitude)
-	%#ADD_WHITE_NOISE_TO_FUNC agrega ruido blanco a una señal
-	%#
-	%# SYNOPSIS add_white_noise_to_func(clean_signal, noise_amplitude)
-	%# INPUT clean_signal: (simbólico) la señal de entrada
-	%# INPUT noise_amplitude: (float) amplitud de la señal de ruido
-	%# OUTPUT noisy (simbólico) señal con ruido agregado
-	%#
-
-
+	noise = noise_amplitude * randn(size(clean_signl));
+	noise = clean_signal + noise;
 end
 
 function [data_ident, data_validation] = generate_ident_package(input_signal, output_signal, sample_time, ident_proportion, plot_package)
